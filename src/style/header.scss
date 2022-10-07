@@ -1,0 +1,50 @@
+@import "./color";
+@import "./global";
+@import "./mixin";
+
+.header {
+    $height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    .logoBox {
+        @include flex-row-start;
+        width: 300px;
+        text-decoration: none;
+        font-size: $font-size-m;
+        .logo {
+            @include centered-background;
+            display: inline-block;
+            width: $height;
+            height: $height;
+            border-radius: 100%;
+            box-shadow: $box-shadow;
+            background-image: $gradient;
+            margin-right: 10px;
+            transition: $transition-f;
+            cursor: pointer;
+        }
+        .logo:hover {
+            box-shadow: $box-shadow-hover;
+        }
+        .name {
+            font-weight: 500;
+            font-size: $font-size-l;
+            color: var(--font-color);
+        }
+    }
+    .buttonBox{
+        @include flex-row-start;
+        .button {
+            height: $height !important;
+            border-radius: calc($height/2) !important;
+            padding: 0 15px;
+            font-size: $font-size-s;
+            margin-right: 10px;
+        }
+        .button:last-child {
+            margin-right: 0;
+        }
+    }
+}
